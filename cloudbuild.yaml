@@ -9,6 +9,30 @@ steps:
     entrypoint: 'npm'
     args: ['run', 'build']
 
+  # Step 3: Build the Docker image and push it to Google Container Registry
+  # Replace 'my-personal-website' with your preferred image name
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/my-personal-website-415505/my-personal-website', '.']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/my-personal-website-415505/my-personal-website']
+
+  # Step 4: Deploy the image to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'my-personal-website' # This is your Cloud Run service name
+      - '--image=gcr.io/my-personal-website-415505/my-personal-website'
+      - '--region=us-central1'
+      - '--platform=managed'
+      - '--allow-unauthenticated' # Remove this if you want to require authentication
+    env:
+      - 'CLOUDSDK_CORE_DISABLE_PROMPTS=1'
+      - 'CLOUDSDK_COMPUTE_REGION=us-central1'
+      - 'CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE=/workspace/credentials.json'
+
 # Optional: specify options like logging
 options:
   logging: CLOUD_LOGGING_ONLY
