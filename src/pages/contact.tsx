@@ -10,7 +10,7 @@ function Contact() {
       Contact
       </Text>
       <Text size="18px">
-      This is where I provide my contact information, using RadixUI!
+      This is where I provide my contact information, using Radix-UI!
       </Text>
     </VStack>
   </>
