@@ -40,7 +40,3 @@ options:
   logging: CLOUD_LOGGING_ONLY
   # The `defaultLogsBucketBehavior` option is not directly supported in `cloudbuild.yaml`
   # Instead, configure your logging behavior through GCP console or `gcloud` command-line options
-
-# Define substitutions for dynamic values, if necessary
-substitutions:
-  _REGION: 'us-central1' # Example substitution
