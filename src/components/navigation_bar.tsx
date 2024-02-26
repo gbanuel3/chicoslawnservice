@@ -2,7 +2,7 @@ import React from 'react'
 import { Toolbar, ToolbarSeparator, ToolbarLink } from '@radix-ui/react-toolbar'
 
 // Custom styling for the toolbar and items
-const toolbarStyles = {
+const toolbarStyles: React.CSSProperties = {
   display: 'flex',
   padding: '10px',
   backgroundColor: '#f0f0f0',
@@ -13,7 +13,7 @@ const toolbarStyles = {
   top: '0',
   zIndex: '1000',
 }
-const itemStyles = {
+const itemStyles: React.CSSProperties = {
   marginLeft: '10px',
   marginRight: '10px',
   cursor: 'pointer',
