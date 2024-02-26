@@ -1,11 +1,19 @@
 import React from 'react'
+import Text from '@/components/text'
+import VStack from '@/components/vstack'
 
 function Contact() {
   return (
-    <div>
-      <h1>Welcome to My Personal Website</h1>
-      <p>This is where I provide my contact information!</p>
-    </div>
+    <>
+    <VStack>
+      <Text size="32px" weight="bold">
+      Contact
+      </Text>
+      <Text size="18px">
+      This is where I provide my contact information, using RadixUI!
+      </Text>
+    </VStack>
+  </>
   )
 }
 

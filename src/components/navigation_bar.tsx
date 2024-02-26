@@ -1,7 +1,7 @@
 import React from 'react'
 import { Toolbar, ToolbarSeparator, ToolbarLink } from '@radix-ui/react-toolbar'
+import styled from 'styled-components'
 
-// Custom styling for the toolbar and items
 const toolbarStyles: React.CSSProperties = {
   display: 'flex',
   padding: '10px',
@@ -19,21 +19,27 @@ const itemStyles: React.CSSProperties = {
   cursor: 'pointer',
 }
 
+const NavBarContainer = styled.div`
+  margin-bottom: 50px;
+`
+
 function NavigationBar() {
   return (
-    <Toolbar style={toolbarStyles}>
-      <ToolbarLink href="/" style={itemStyles} asChild>
-        <a>Home</a>
-      </ToolbarLink>
-      <ToolbarSeparator />
-      <ToolbarLink href="/about" style={itemStyles} asChild>
-        <a>About</a>
-      </ToolbarLink>
-      <ToolbarSeparator />
-      <ToolbarLink href="/contact" style={itemStyles} asChild>
-        <a>Contact</a>
-      </ToolbarLink>
-    </Toolbar>
+    <NavBarContainer>
+      <Toolbar style={toolbarStyles}>
+        <ToolbarLink href="/" style={itemStyles} asChild>
+          <a>Home</a>
+        </ToolbarLink>
+        <ToolbarSeparator />
+        <ToolbarLink href="/about" style={itemStyles} asChild>
+          <a>About</a>
+        </ToolbarLink>
+        <ToolbarSeparator />
+        <ToolbarLink href="/contact" style={itemStyles} asChild>
+          <a>Contact</a>
+        </ToolbarLink>
+      </Toolbar>
+    </NavBarContainer>
   )
 }
 
