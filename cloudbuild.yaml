@@ -1,0 +1,46 @@
+steps:
+# Step 1: Install dependencies
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
+
+# Step 2: Build the Next.js application
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['run', 'build']
+
+# Optional: Add additional steps here for testing or other build processes
+
+# Step 3: Deploy to App Engine or Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'gcloud'
+  args:
+    - 'app'
+    - 'deploy'
+    # Specify your app.yaml location if it's not in the root directory
+    - 'app.yaml'
+  # Include the logging options here as environment variables if necessary
+  env:
+    - 'CLOUDSDK_CORE_DISABLE_PROMPTS=1' # Disable prompts for automated deployment
+
+# Example for deploying to Cloud Run (comment out or remove the App Engine step if using Cloud Run)
+# - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+#   entrypoint: 'gcloud'
+#   args:
+#     - 'run'
+#     - 'deploy'
+#     - 'YOUR_SERVICE_NAME'
+#     - '--image=gcr.io/$PROJECT_ID/YOUR_IMAGE_NAME'
+#     - '--region=YOUR_REGION'
+#     - '--platform=managed'
+#     - '--allow-unauthenticated'
+#   env:
+#     - 'CLOUDSDK_CORE_DISABLE_PROMPTS=1'
+
+options:
+  # These options are for Cloud Build and not directly related to the `gcloud app deploy` or `gcloud run deploy` commands
+  logging: CLOUD_LOGGING_ONLY
+  # The `defaultLogsBucketBehavior` option is not directly supported in `cloudbuild.yaml`
+  # Instead, configure your logging behavior through GCP console or `gcloud` command-line options
+
+# Define substitutions for dynamic values, if necessary
+substitutions:
+  _REGION: 'us-central1' # Example substitution
