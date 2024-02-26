@@ -31,7 +31,6 @@ steps:
     env:
       - 'CLOUDSDK_CORE_DISABLE_PROMPTS=1'
       - 'CLOUDSDK_COMPUTE_REGION=us-central1'
-      - 'CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE=/workspace/credentials.json'
 
 # Optional: specify options like logging
 options:
