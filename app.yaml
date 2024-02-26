@@ -1,10 +1,8 @@
 runtime: nodejs18
 
-handlers:
-- url: /
-  static_files: build/index.html
-  upload: build/index.html
+env_variables:
+  NODE_ENV: 'production'
 
-- url: /(.*)
-  static_files: build/\1
-  upload: build/(.*)
+handlers:
+- url: /.*
+  script: auto
