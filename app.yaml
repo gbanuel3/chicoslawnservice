@@ -1,7 +1,5 @@
 runtime: nodejs18
 
-env: flex
-
 env_variables:
   NODE_ENV: 'production'
 
