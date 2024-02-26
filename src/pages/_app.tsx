@@ -12,14 +12,14 @@ function MyApp({
 }) {
   return (
     <>
-      <html>
-        <body>
-          <Theme>
-            <NavigationBar />
-            <Component {...pageProps} />
-          </Theme>
-        </body>
-      </html>
+    <html>
+      <body>
+      <Theme>
+        <NavigationBar />
+        <Component {...pageProps} />
+      </Theme>
+      </body>
+    </html>
     </>
   )
 }
