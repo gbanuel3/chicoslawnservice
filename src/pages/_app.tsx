@@ -1,4 +1,6 @@
 import { ComponentType } from 'react'
+import '@radix-ui/themes/styles.css'
+import { Theme } from '@radix-ui/themes'
 import NavigationBar from '@/components/navigation_bar'
 
 function MyApp({
@@ -10,8 +12,14 @@ function MyApp({
 }) {
   return (
     <>
-      <NavigationBar />
-      <Component {...pageProps} />
+      <html>
+        <body>
+          <Theme>
+            <NavigationBar />
+            <Component {...pageProps} />
+          </Theme>
+        </body>
+      </html>
     </>
   )
 }
