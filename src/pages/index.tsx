@@ -1,11 +1,19 @@
 import React from 'react'
+import VStack from '@/components/vstack'
+import Text from '@/components/text'
 
 function Index() {
   return (
-    <div>
-      <h1>Welcome to My Personal Website</h1>
-      <p>This is the place where I share my projects, thoughts, and ideas.</p>
-    </div>
+    <>
+    <VStack>
+      <Text size="32px" weight="bold">
+      Welcome to My Personal Website
+      </Text>
+      <Text size="18px">
+      This is the place where I share my projects, thoughts, and ideas.
+      </Text>
+    </VStack>
+    </>
   )
 }
 
