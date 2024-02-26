@@ -1,4 +1,4 @@
-runtime: nodejs21
+runtime: nodejs18
 
 handlers:
 - url: /
