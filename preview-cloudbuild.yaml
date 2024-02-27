@@ -25,7 +25,6 @@ steps:
       - 'deploy'
       - 'demo-service' # This is your Cloud Run service name
       - '--image=gcr.io/my-personal-website-415505/my-personal-website:$SHORT_SHA'
-      - '--no-traffic'
       - '--allow-unauthenticated' # Remove this if you want to require authentication
       - '--region=us-central1'
       - '--platform=managed'
