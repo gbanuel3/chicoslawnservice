@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 interface TextProps {
-  size?: string;
-  color?: string;
-  weight?: string; // Add the 'weight' property
-  lineHeight?: string;
+  size?: string
+  color?: string
+  weight?: string
+  lineHeight?: string
 }
 
 const Text = styled.span<TextProps>`
@@ -12,6 +12,6 @@ const Text = styled.span<TextProps>`
   color: ${(props) => props.color || '#000'};
   font-weight: ${(props) => props.weight || 'normal'};
   line-height: ${(props) => props.lineHeight || 'normal'};
-`;
+`
 
-export default Text;
+export default Text
