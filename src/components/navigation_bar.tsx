@@ -1,78 +1,63 @@
-import React from 'react'
-import { Toolbar, ToolbarLink, ToolbarSeparator } from '@radix-ui/react-toolbar'
-import styled from 'styled-components'
-import Text from './text'
-
-const NavBarContainer = styled(Toolbar)`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #3e9b4f; // Assuming a color similar to the blue in the image
-  color: white;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-`
-
-const Logo = styled.div`
-  font-size: 36px; // Adjust size as needed
-  font-weight: bold;
-`
-
-const NavItems = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 20px; // Adjust gap as needed
-  margin-right: 40px;
-`
-
-const SocialMediaLink = styled(ToolbarLink)`
-  color: white;
-  cursor: pointer;
-  size: 22px; // Adjust size as needed
-  &:hover {
-    color: #ebebeb; // Lighten the color on hover
-  }
-`
-
-const PhoneNumber = styled.a`
-  color: white; // Assuming you want the phone number to be white like other items
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 22px; // Adjust size as needed
-  &:hover {
-    text-decoration: underline;
-  }
-`
-
-const GetInTouchButton = styled(ToolbarLink)`
-  background-color: white;
-  color: #3b5998; // Match the navbar color
-  padding: 10px 20px;
-  border-radius: 20px; // Adjust for desired curvature
-  text-decoration: none;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #ebebeb; // Lighten the background on hover
-  }
-`
+import React from 'react';
+import { Box, Flex, Link, Spacer, useMediaQuery } from '@chakra-ui/react';
+import { NAVBAR_COLOR } from '@/constants';
 
 function NavigationBar() {
+  // Use the useMediaQuery hook to determine the screen size
+  const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
+
   return (
-    <NavBarContainer>
-      <Logo>Chicos</Logo>
-      <NavItems>
-        <PhoneNumber href="tel:1-847-949-7232">1-(847)-949-7232</PhoneNumber>
-        <ToolbarSeparator />
-        <GetInTouchButton href="mailto:gbanuel3@gmail.com" asChild>
-          <Text>Get In Touch</Text>
-        </GetInTouchButton>
-      </NavItems>
-    </NavBarContainer>
-  )
+    <Flex
+      as="nav"
+      align="center"
+      justify="space-between"
+      wrap="wrap"
+      bg={NAVBAR_COLOR}
+      color="white"
+      position="fixed"
+      width="100%"
+      zIndex="1000"
+      padding={isLargerThan768 ? '1rem' : '0.5rem'} // Conditional padding based on screen size
+    >
+      <Box
+        fontSize={isLargerThan768 ? '36px' : '20px'} // Conditional font size based on screen size
+        fontWeight="bold"
+        whiteSpace="nowrap"
+        cursor="pointer"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
+        Chicos Lawn Service
+      </Box>
+
+      <Spacer />
+
+      <Flex gap={isLargerThan768 ? '30px' : '10px'} paddingRight={isLargerThan768 ? '3rem' : '1rem'}>
+        <Box fontSize={isLargerThan768 ? '32px' : '18px'}>
+          <Link href="tel:+18479497232" textDecoration={'none'} color={'white'}>
+            1-(847)-949-7232
+          </Link>
+        </Box>
+
+        <Box
+          as="button"
+          bg="white"
+          borderRadius="20px"
+          _hover={{ bg: '#ededed' }}
+          fontSize={isLargerThan768 ? '18px' : '10px'} // Conditional font size based on screen size
+          border="0px"
+          padding={isLargerThan768 ? '8px 16px' : '4px 8px'} // Conditional padding based on screen size
+        >
+          <Link
+            href="mailto:gbanuel3@gmail.com"
+            textDecoration={'none'}
+            color={'black'}
+          >
+            Get In Touch
+          </Link>
+        </Box>
+      </Flex>
+    </Flex>
+  );
 }
 
-export default NavigationBar
+export default NavigationBar;
