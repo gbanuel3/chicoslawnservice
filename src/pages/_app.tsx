@@ -2,6 +2,7 @@ import { ComponentType } from 'react'
 import '@radix-ui/themes/styles.css'
 import { Theme } from '@radix-ui/themes'
 import NavigationBar from '@/components/navigation_bar'
+import VStack from '@/components/vstack'
 
 function MyApp({
   Component,
@@ -11,12 +12,12 @@ function MyApp({
   pageProps: any
 }) {
   return (
-    <>
-      <Theme>
-        <NavigationBar />
+    <Theme>
+      <NavigationBar />
+      <VStack style={{ marginTop: '5rem' }}> {/* Adjust the value as needed to match the Navbar's height */}
         <Component {...pageProps} />
-      </Theme>
-    </>
+      </VStack>
+    </Theme>
   )
 }
 
