@@ -2,6 +2,7 @@ import { ComponentType } from 'react'
 import NavigationBar from '@/components/navigation_bar'
 import { VStack } from '@chakra-ui/react'
 import GlobalStyle from '@/styles/GlobalStyle'
+import { ChakraProvider } from '@chakra-ui/react'
 
 function MyApp({
   Component,
@@ -12,11 +13,13 @@ function MyApp({
 }) {
   return (
     <>
+    <ChakraProvider>
       <GlobalStyle />
       <NavigationBar />
       <VStack>
         <Component {...pageProps} />
       </VStack>
+    </ChakraProvider>
     </>
   )
 }
