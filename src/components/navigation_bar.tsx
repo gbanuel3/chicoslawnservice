@@ -1,10 +1,10 @@
-import React from 'react';
-import { Box, Flex, Link, Spacer, useMediaQuery } from '@chakra-ui/react';
-import { NAVBAR_COLOR } from '@/constants';
+import React from 'react'
+import { Box, Flex, Link, Spacer, useMediaQuery } from '@chakra-ui/react'
+import { NAVBAR_COLOR } from '@/constants'
 
 function NavigationBar() {
   // Use the useMediaQuery hook to determine the screen size
-  const [isLargerThan768] = useMediaQuery('(min-width: 768px)');
+  const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
 
   return (
     <Flex
@@ -31,7 +31,10 @@ function NavigationBar() {
 
       <Spacer />
 
-      <Flex gap={isLargerThan768 ? '30px' : '10px'} paddingRight={isLargerThan768 ? '3rem' : '1rem'}>
+      <Flex
+        gap={isLargerThan768 ? '30px' : '10px'}
+        paddingRight={isLargerThan768 ? '3rem' : '1rem'}
+      >
         <Box fontSize={isLargerThan768 ? '32px' : '16px'}>
           <Link href="tel:+18479497232" textDecoration={'none'} color={'white'}>
             1-(847)-949-7232
@@ -57,7 +60,7 @@ function NavigationBar() {
         </Box>
       </Flex>
     </Flex>
-  );
+  )
 }
 
-export default NavigationBar;
+export default NavigationBar

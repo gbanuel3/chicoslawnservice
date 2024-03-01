@@ -13,13 +13,13 @@ function MyApp({
 }) {
   return (
     <>
-    <ChakraProvider>
-      <GlobalStyle />
-      <NavigationBar />
-      <VStack>
-        <Component {...pageProps} />
-      </VStack>
-    </ChakraProvider>
+      <ChakraProvider>
+        <GlobalStyle />
+        <NavigationBar />
+        <VStack>
+          <Component {...pageProps} />
+        </VStack>
+      </ChakraProvider>
     </>
   )
 }
