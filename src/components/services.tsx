@@ -49,26 +49,34 @@ function Services() {
         >
           {serviceData.map((service, index) => (
             <VStack
-                key={index}
-                padding={5}
-                backgroundColor="gray.900"
-                borderRadius="md"
+              key={index}
+              padding={5}
+              backgroundColor="gray.900"
+              borderRadius="md"
             >
-                {service && (
-                    <>
-                        <service.imageSrc boxSize={'50px'} />
-                        <Spacer />
-                        <Spacer />
-                        <Text fontSize="xl" fontWeight="semibold" textAlign={'center'}>
-                            {service.title}
-                        </Text>
-                        <Text fontSize={"large"} textAlign={'center'}>{service.description}</Text>
-                    </>
-                )}
+              {service && (
+                <>
+                  <service.imageSrc boxSize={'50px'} />
+                  <Spacer />
+                  <Spacer />
+                  <Text fontSize="xl" fontWeight="semibold" textAlign={'center'}>
+                    {service.title}
+                  </Text>
+                  <Text fontSize={'large'} textAlign={'center'}>
+                    {service.description}
+                  </Text>
+                </>
+              )}
             </VStack>
           ))}
         </Grid>
-        <Button colorScheme="teal" variant="outline" color="white">
+        <Button
+          as="a"
+          href="mailto:gbanuel3@gmail.com"
+          colorScheme="teal"
+          variant="outline"
+          color="white"
+        >
           Get In Touch
         </Button>
       </VStack>
