@@ -30,7 +30,7 @@ const Projects = () => {
     // Adjusting maximum height and width for smaller screens
     const swiperMaxHeight = useBreakpointValue({ base: '250px', md: '500px' });
     const swiperMaxWidth = useBreakpointValue({ base: '100vw', md: '80vw', lg: '60vw', xl: '1280px' });
-    const imageHeight = useBreakpointValue({ base: '200px', md: '250px', lg: '400px' });
+    const imageHeight = useBreakpointValue({ base: '250px', md: '250px', lg: '400px' });
   
     return (
       <Flex
