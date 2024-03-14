@@ -6,8 +6,8 @@ function NavigationBar() {
   // Responsive design values using useBreakpointValue
   const navPadding = useBreakpointValue({ base: '0.75rem', md: '1rem' });
   const navHeight = useBreakpointValue({ base: '80px', md: '90px' });
-  const textSize = useBreakpointValue({ base: '16px', md: '36px' });
-  const numberTextSize = useBreakpointValue({ base: '16px', md: '25px' });
+  const textSize = useBreakpointValue({ base: '14px', md: '36px' });
+  const numberTextSize = useBreakpointValue({ base: '12px', md: '25px' });
   const flexGap = useBreakpointValue({ base: '10px', md: '26px' });
   const buttonFontSize = useBreakpointValue({ base: '8px', md: '18px' });
   const buttonPadding = useBreakpointValue({ base: '4px 8px', md: '8px 16px' });
