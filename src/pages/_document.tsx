@@ -32,18 +32,18 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
         <title>Chico's Lawn Service</title>
-          <meta name="title" content="Chico's Lawn Service" />
+          <meta name="title" content="Chico&#39;s Lawn Service" />
           <meta name="description" content="Operating in the Chicagoland area - trusted for over 25 years!" />
 
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://chicoslawnservice.com" /> 
-          <meta property="og:title" content="Chico's Lawn Service" />
+          <meta property="og:title" content="Chico&#39;s Lawn Service" />
           <meta property="og:description" content="Operating in the Chicagoland area - trusted for over 25 years!" />
           <meta property="og:image" content="https://chicoslawnservice.com/logo.webp" /> 
 
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:url" content="https://chicoslawnservice.com" /> 
-          <meta property="twitter:title" content="Chico's Lawn Service" />
+          <meta property="twitter:title" content="Chico&#39;s Lawn Service" />
           <meta property="twitter:description" content="Operating in the Chicagoland area - trusted for over 25 years!" />
           <meta property="twitter:image" content="https://chicoslawnservice.com/logo.webp" /> 
 
