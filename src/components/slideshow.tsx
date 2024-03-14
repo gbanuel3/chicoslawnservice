@@ -42,9 +42,9 @@ function Slideshow() {
     align="center"
     justify="center"
     width="full"
-    bg='white'
+    bg={NAVBAR_COLOR}
   >
-    <Center width="100vw" height={centerHeight} bg={NAVBAR_COLOR} pb={bottomPadding} pt={topPadding}>
+    <Center width="100vw" bg={NAVBAR_COLOR} pb={bottomPadding} pt={topPadding}>
       <Swiper
         modules={[Navigation]}
         spaceBetween={50}
