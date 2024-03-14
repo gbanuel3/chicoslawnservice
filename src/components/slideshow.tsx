@@ -31,7 +31,7 @@ function Slideshow() {
   const centerHeight = useBreakpointValue({
     base: '35vh', // shorter on smaller screens
     md: '95vh',   // taller on medium screens
-    lg: '95vh',   // even taller on large screens
+    lg: '75vh',   // even taller on large screens
   });
 
   return (

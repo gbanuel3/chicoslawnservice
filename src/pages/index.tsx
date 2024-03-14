@@ -3,6 +3,7 @@ import { VStack } from '@chakra-ui/react'
 import Slideshow from '@/components/slideshow'
 import Services from '@/components/services'
 import Projects from '@/components/projects'
+import Biography from '@/components/biography'
 
 function Index() {
   return (
@@ -11,6 +12,7 @@ function Index() {
         <Slideshow></Slideshow>
         <Services></Services>
         <Projects></Projects>
+        <Biography></Biography>
       </VStack>
     </>
   )
