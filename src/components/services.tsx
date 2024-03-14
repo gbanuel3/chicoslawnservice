@@ -6,6 +6,7 @@ import {
   TriangleUpIcon,
   PlusSquareIcon,
 } from '@chakra-ui/icons'
+import { useBreakpointValue } from '@chakra-ui/react'
 
 function Services() {
   const serviceData = [
@@ -35,6 +36,7 @@ function Services() {
     },
   ]
   const sideMargin = 8
+  const dynamicPadding = useBreakpointValue({ base: 4, md: 5 });
   return (
     <Box backgroundColor="black" color="white" paddingY="50px">
       <VStack spacing={8}>
@@ -50,7 +52,7 @@ function Services() {
           {serviceData.map((service, index) => (
             <VStack
               key={index}
-              padding={5}
+              padding={dynamicPadding}
               backgroundColor="gray.900"
               borderRadius="md"
             >

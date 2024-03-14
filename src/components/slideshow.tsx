@@ -1,15 +1,22 @@
-import React, { useState } from 'react'
 import {
   Flex,
   IconButton,
-  Image,
-  useBreakpointValue,
   Box,
-  Spacer,
-  useMediaQuery,
+  Text,
+  useBreakpointValue,
+  VStack,
+  Image,
+  Center
 } from '@chakra-ui/react'
-import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
+import { Navigation } from 'swiper/modules'
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
 import { NAVBAR_COLOR } from '@/constants'
+import 'swiper/css'
+import React from 'react'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
 
 const images = [
   '/image.jpg',
@@ -19,71 +26,45 @@ const images = [
 ]
 
 function Slideshow() {
-  const [isLandscape] = useMediaQuery('(max-height: 430px)');
-  const [currentSlide, setCurrentSlide] = useState(0)
-  // Using useBreakpointValue to adjust sizes and spacing responsively
-  const imageSize = useBreakpointValue({ base: '75%', md: '100%' })
-  const marginAround = useBreakpointValue({ base: '1', md: '2' })
-  const maxImageSize = useBreakpointValue({ base: 'auto', lg: '900px' })
-  const marginTop = useBreakpointValue({ base: '7vh', md: '15vh' })
-  const marginBottom = useBreakpointValue({ base: '5vh', md: '15vh' })
-
-  const handlePrev = () =>
-    setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1))
-  const handleNext = () =>
-    setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+  const maxImageWidth = useBreakpointValue({ base: '75vw', md: '60vw' }); // Adjusting for responsiveness
+  const maxImageHeight = useBreakpointValue({ base: '60vh', md: '60vh' }); // Adjusting for responsiveness
+  const centerHeight = useBreakpointValue({
+    base: '35vh', // shorter on smaller screens
+    md: '95vh',   // taller on medium screens
+    lg: '95vh',   // even taller on large screens
+  });
 
   return (
-    <Box
-      bg={NAVBAR_COLOR}
-      width="100vw"
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <Flex
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        width={isLandscape ? 'auto' : imageSize}
-        marginTop={marginTop}
-        marginBottom={marginBottom}
+    <Center width="100vw" height={centerHeight} bg={NAVBAR_COLOR}>
+      <Swiper
+        modules={[Navigation]}
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation
+        loop={true}
+        style={{ width: '100%', height: '100%' }} // Ensure Swiper fills the container
       >
-        <Flex justifyContent="center" alignItems="center" width="100%">
-          <IconButton
-            aria-label="Previous image"
-            icon={<ArrowBackIcon />}
-            onClick={handlePrev}
-            size={'md'}
-            variant="ghost"
-            color="white"
-            bg="gray"
-            isRound={true}
-            m={marginAround}
-          />
-          <Image
-            src={images[currentSlide]}
-            alt="Slideshow image"
-            boxSize="auto"
-            objectFit="cover"
-            maxW={maxImageSize}
-            maxH={isLandscape ? '50vh' : maxImageSize}
-          />
-          <IconButton
-            aria-label="Next image"
-            icon={<ArrowForwardIcon />}
-            onClick={handleNext}
-            size={'md'}
-            variant="ghost"
-            color="white"
-            bg="gray"
-            isRound={true}
-            m={marginAround}
-          />
-        </Flex>
-      </Flex>
-    </Box>
-  )
+        {images.map((src, index) => (
+          <SwiperSlide key={index}>
+            <VStack
+              width="full"
+              height="full"
+              justify="center"
+              align="center"
+            >
+              <Image
+                src={src}
+                alt={`Slide ${index}`}
+                maxWidth={maxImageWidth}
+                maxHeight={maxImageHeight}
+                objectFit="contain" // Ensure the image fits within its constraints without losing aspect ratio
+              />
+            </VStack>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </Center>
+  );
 }
 
-export default Slideshow
+export default Slideshow;
