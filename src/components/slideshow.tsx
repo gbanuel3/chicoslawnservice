@@ -29,7 +29,7 @@ function Slideshow() {
   const maxImageWidth = useBreakpointValue({ base: '250px', md: '60vw', lg: '65vw'}); // Adjusting for responsiveness
   const maxImageHeight = useBreakpointValue({ base: '250px', md: '60vh', lg: '60vh'}); // Adjusting for responsiveness
   const centerHeight = useBreakpointValue({
-    base: '40vh', // shorter on smaller screens
+    base: '60vh', // shorter on smaller screens
     md: '110vh',   // taller on medium screens
     lg: '75vh',   // even taller on large screens
   });
@@ -42,7 +42,7 @@ function Slideshow() {
     align="center"
     justify="center"
     width="full"
-    bg='white'
+    bg={NAVBAR_COLOR}
   >
     <Center width="100vw" height={centerHeight} bg={NAVBAR_COLOR} pb={bottomPadding} pt={topPadding}>
       <Swiper
