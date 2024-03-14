@@ -1,26 +1,32 @@
 import React from 'react'
-import { Box, Flex, Link, Spacer, useMediaQuery } from '@chakra-ui/react'
+import { Box, Flex, Link, Spacer, useMediaQuery, useBreakpointValue } from '@chakra-ui/react'
 import { NAVBAR_COLOR } from '@/constants'
 
 function NavigationBar() {
-  // Use the useMediaQuery hook to determine the screen size
-  const [isLargerThan768] = useMediaQuery('(min-width: 768px)')
+  // Responsive design values using useBreakpointValue
+  const navPadding = useBreakpointValue({ base: '0.75rem', md: '1rem' });
+  const navHeight = useBreakpointValue({ base: '80px', md: '90px' });
+  const textSize = useBreakpointValue({ base: '16px', md: '36px' });
+  const numberTextSize = useBreakpointValue({ base: '16px', md: '25px' });
+  const flexGap = useBreakpointValue({ base: '10px', md: '26px' });
+  const buttonFontSize = useBreakpointValue({ base: '8px', md: '18px' });
+  const buttonPadding = useBreakpointValue({ base: '4px 8px', md: '8px 16px' });
 
   return (
     <Flex
       as="nav"
       align="center"
       justify="space-between"
-      wrap="wrap"
       bg={NAVBAR_COLOR}
       color="white"
       position="fixed"
       width="100%"
       zIndex="1000"
-      padding={isLargerThan768 ? '1rem' : '0.5rem'} // Conditional padding based on screen size
+      padding={navPadding}
+      height={navHeight}
     >
       <Box
-        fontSize={isLargerThan768 ? '36px' : '18px'} // Conditional font size based on screen size
+        fontSize={textSize}
         fontWeight="bold"
         whiteSpace="nowrap"
         cursor="pointer"
@@ -32,10 +38,10 @@ function NavigationBar() {
       <Spacer />
 
       <Flex
-        gap={isLargerThan768 ? '30px' : '10px'}
-        paddingRight={isLargerThan768 ? '3rem' : '1rem'}
+        gap={flexGap}
+        paddingRight={navPadding}
       >
-        <Box fontSize={isLargerThan768 ? '32px' : '16px'}>
+        <Box fontSize={numberTextSize}> 
           <Link href="tel:+18479497232" textDecoration={'none'} color={'white'}>
             1-(847)-949-7232
           </Link>
@@ -46,9 +52,9 @@ function NavigationBar() {
           bg="white"
           borderRadius="20px"
           _hover={{ bg: '#ededed' }}
-          fontSize={isLargerThan768 ? '18px' : '8px'} // Conditional font size based on screen size
+          fontSize={buttonFontSize}
           border="0px"
-          padding={isLargerThan768 ? '8px 16px' : '4px 8px'} // Conditional padding based on screen size
+          padding={buttonPadding}
         >
           <Link
             href="mailto:gbanuel3@gmail.com"
@@ -60,7 +66,7 @@ function NavigationBar() {
         </Box>
       </Flex>
     </Flex>
-  )
+  );
 }
 
-export default NavigationBar
+export default NavigationBar;
