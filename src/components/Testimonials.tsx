@@ -18,7 +18,7 @@ const testimonials = [
       author: "Lila Hartley",
     },
     {
-      quote: "Professional, punctual, and thorough: we can't recommend them enough!",
+      quote: "Professional, punctual, and thorough: we cannott recommend them enough!",
       author: "Mason York",
     },
     // Add more fake testimonials as needed
