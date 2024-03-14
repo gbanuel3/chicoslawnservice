@@ -68,7 +68,7 @@ const Projects = () => {
                       bottom="0"
                       width="full"
                       textAlign="center"
-                      bgColor="rgba(0, 0, 0, 0.85)"
+                      bgColor="rgba(0, 0, 0, 0.5)"
                       color="white"
                       p={2}
                     >
