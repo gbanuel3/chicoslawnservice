@@ -4,6 +4,7 @@ import Slideshow from '@/components/slideshow'
 import Services from '@/components/services'
 import Projects from '@/components/projects'
 import Biography from '@/components/biography'
+import Testimonials from '@/components/Testimonials'
 
 function Index() {
   return (
@@ -13,6 +14,7 @@ function Index() {
         <Services></Services>
         <Projects></Projects>
         <Biography></Biography>
+        <Testimonials></Testimonials>
       </VStack>
     </>
   )
