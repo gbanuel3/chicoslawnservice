@@ -31,7 +31,6 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-        <title>Chico's Lawn Service</title>
           <meta name="title" content="Chico&#39;s Lawn Service" />
           <meta name="description" content="Operating in the Chicagoland area - trusted for over 25 years!" />
 
