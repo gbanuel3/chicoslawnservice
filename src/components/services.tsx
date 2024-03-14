@@ -7,6 +7,7 @@ import {
   PlusSquareIcon,
 } from '@chakra-ui/icons'
 import { useBreakpointValue } from '@chakra-ui/react'
+import { EMAIL } from '@/constants'
 
 function Services() {
   const serviceData = [
@@ -74,7 +75,7 @@ function Services() {
         </Grid>
         <Button
           as="a"
-          href="mailto:gbanuel3@gmail.com"
+          href={`mailto:${EMAIL}`}
           colorScheme="teal"
           variant="outline"
           color="white"

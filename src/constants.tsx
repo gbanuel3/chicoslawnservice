@@ -1,1 +1,5 @@
 export const NAVBAR_COLOR = '#46A758'
+export const EMAIL = 'gbanuel3@gmail.com'
+export const PHONE_NUMBER = '18479497232'
+export const PHONE_NUMBER_DISPLAY = '1-(847)-949-7232'
+export const ADDRESS = 'Long Grove, IL'
