@@ -17,15 +17,10 @@ import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 
 const images = [
-  { src: '/image.jpg', title: 'PASSIVE HOUSE' },
-  { src: '/image2.jpg', title: 'SLAT ROOF' },
-  { src: '/image3.jpeg', title: 'STUDIO SHED' },
-  { src: '/image.jpg', title: 'PASSIV HOUSE' },
-  { src: '/image2.jpg', title: 'SLA ROOF' },
-  { src: '/image3.jpeg', title: 'STUDI SHED' },
-  { src: '/image.jpg', title: 'PASSIVE HOUSE' },
-  { src: '/image2.jpg', title: 'SLAT ROOF' },
-  { src: '/image3.jpeg', title: 'STUDIO SHED' },
+  { src: '/patio.webp', title: 'PATIO' },
+  { src: '/sidewalk.webp', title: 'SIDEWALK' },
+  { src: '/fountain.webp', title: 'FOUNTAIN' },
+  { src: '/bridge.webp', title: 'BRIDGE' },
   // Add more images and titles as needed
 ]
 

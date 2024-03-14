@@ -19,9 +19,9 @@ import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 
 const images = [
-  '/image.jpg',
-  '/image2.jpg',
-  '/image3.jpeg',
+  '/flowers.webp',
+  '/cleanup.webp',
+  '/garden.webp'
   // Add more images as needed
 ]
 
@@ -29,8 +29,8 @@ function Slideshow() {
   const maxImageWidth = useBreakpointValue({ base: '75vw', md: '60vw' }); // Adjusting for responsiveness
   const maxImageHeight = useBreakpointValue({ base: '60vh', md: '60vh' }); // Adjusting for responsiveness
   const centerHeight = useBreakpointValue({
-    base: '35vh', // shorter on smaller screens
-    md: '95vh',   // taller on medium screens
+    base: '40vh', // shorter on smaller screens
+    md: '110vh',   // taller on medium screens
     lg: '75vh',   // even taller on large screens
   });
 
