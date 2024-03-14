@@ -6,6 +6,7 @@ import {
   useBreakpointValue,
   Box,
   Spacer,
+  useMediaQuery,
 } from '@chakra-ui/react'
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 import { NAVBAR_COLOR } from '@/constants'
@@ -18,11 +19,12 @@ const images = [
 ]
 
 function Slideshow() {
+  const [isLandscape] = useMediaQuery('(max-height: 430px)');
   const [currentSlide, setCurrentSlide] = useState(0)
   // Using useBreakpointValue to adjust sizes and spacing responsively
   const imageSize = useBreakpointValue({ base: '75%', md: '100%' })
   const marginAround = useBreakpointValue({ base: '1', md: '2' })
-  const maxImageSize = useBreakpointValue({ base: 'auto', lg: '1000px' })
+  const maxImageSize = useBreakpointValue({ base: 'auto', lg: '900px' })
   const marginTop = useBreakpointValue({ base: '7vh', md: '15vh' })
   const marginBottom = useBreakpointValue({ base: '5vh', md: '15vh' })
 
@@ -43,7 +45,7 @@ function Slideshow() {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        width={imageSize}
+        width={isLandscape ? 'auto' : imageSize}
         marginTop={marginTop}
         marginBottom={marginBottom}
       >
@@ -65,7 +67,7 @@ function Slideshow() {
             boxSize="auto"
             objectFit="cover"
             maxW={maxImageSize}
-            maxH={maxImageSize}
+            maxH={isLandscape ? '50vh' : maxImageSize}
           />
           <IconButton
             aria-label="Next image"
