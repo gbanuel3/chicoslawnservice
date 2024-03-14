@@ -62,7 +62,7 @@ function Testimonials() {
           <SwiperSlide key={index}>
             <VStack spacing={4}>
               <Text fontSize={{ base: 'md', md: 'lg' }} fontStyle="italic">
-                "{testimonial.quote}"
+                {testimonial.quote}
               </Text>
               <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="bold">
                 {testimonial.author}
