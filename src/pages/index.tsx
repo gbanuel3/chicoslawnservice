@@ -5,6 +5,7 @@ import Services from '@/components/services'
 import Projects from '@/components/projects'
 import Biography from '@/components/biography'
 import Testimonials from '@/components/Testimonials'
+import Contact from '@/components/contact'
 
 function Index() {
   return (
@@ -15,6 +16,7 @@ function Index() {
         <Projects></Projects>
         <Biography></Biography>
         <Testimonials></Testimonials>
+        <Contact></Contact>
       </VStack>
     </>
   )
