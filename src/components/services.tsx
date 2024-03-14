@@ -24,7 +24,7 @@ function Services() {
     },
     ,
     {
-      title: 'Clean Ups',
+      title: 'Outdoor Clean Ups',
       description:
         'We offer services including but not limited to pruning, trimming, edging, and weeding.',
       imageSrc: TriangleUpIcon,

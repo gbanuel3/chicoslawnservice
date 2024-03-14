@@ -26,7 +26,7 @@ function Contact() {
             bg: "blue.600",
           }}
         >
-          Contact
+          Get a free quote
         </Button>
       </VStack>
     </Box>
