@@ -17,10 +17,10 @@ import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 
 const images = [
-  { src: '/patio.webp', title: 'PATIO' },
-  { src: '/sidewalk.webp', title: 'SIDEWALK' },
-  { src: '/fountain.webp', title: 'FOUNTAIN' },
-  { src: '/bridge.webp', title: 'BRIDGE' },
+  { src: '/driveway.jpeg', title: 'DRIVEWAY' },
+  { src: '/wooden-fence.jpeg', title: 'FENCE' },
+  { src: '/sidewalk.jpeg', title: 'SIDEWALK' },
+  { src: '/mulch-path.jpeg', title: 'PATH' },
   // Add more images and titles as needed
 ]
 

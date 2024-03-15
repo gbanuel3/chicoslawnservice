@@ -22,7 +22,7 @@ function Biography() {
       >
         <Box textAlign="center">
           <Image
-            src="/park.webp"
+            src="/trucks.jpeg"
             alt="Landscaping Image"
             borderRadius="md"
             m="auto" // Center the image within the Box

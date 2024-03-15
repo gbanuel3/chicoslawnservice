@@ -19,9 +19,10 @@ import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 
 const images = [
-  '/flowers.webp',
-  '/cleanup.webp',
-  '/garden.webp'
+  '/brick-fence.jpeg',
+  '/deck.jpeg',
+  '/red-driveway.jpeg',
+  '/mulch-path.jpeg'
   // Add more images as needed
 ]
 

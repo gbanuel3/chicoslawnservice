@@ -12,16 +12,16 @@ const testimonials = [
   {
     quote:
       'The team made sure our house was built according to our budget and standards. We love the new look!',
-    author: 'Emmett Marsh',
+    author: '- Emmett',
   },
   {
     quote:
       'Fantastic work! Our garden has never looked better. The attention to detail was truly beyond our expectations.',
-    author: 'Lila Hartley',
+    author: '- Lilly',
   },
   {
     quote: 'Professional, punctual, and thorough: we cannot recommend them enough!',
-    author: 'Mason York',
+    author: '- Mason',
   },
   // Add more fake testimonials as needed
 ]
