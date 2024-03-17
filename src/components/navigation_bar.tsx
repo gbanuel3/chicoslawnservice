@@ -39,7 +39,7 @@ function NavigationBar() {
         cursor="pointer"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
-        Chicos Lawn Service
+        Chicos Lawn Service - test
       </Box>
 
       <Spacer />
