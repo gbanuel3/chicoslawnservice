@@ -1,23 +1,7 @@
-runtime: custom
-env: flex
+env: standard
 
 env_variables:
   NODE_ENV: 'production'
-
-resources:
-  cpu: 1
-  memory_gb: 0.5
-  disk_size_gb: 10  # Adjust based on your application's requirements
-
-automatic_scaling:
-  min_num_instances: 1  # Consider setting to 0 if your application can handle cold starts
-  max_num_instances: 2  # Set a low max limit to control costs
-  cpu_utilization:
-    target_utilization: 0.5
-  cool_down_period_sec: 60
-  min_idle_instances: 0
-  max_idle_instances: 1  # Keep this low to reduce idle costs
-  idle_timeout: 5m  # Aggressive timeout to reduce costs
 
 handlers:
 - url: /.*
